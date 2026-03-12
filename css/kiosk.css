@@ -162,11 +162,115 @@
   #page-kiosk.active { grid-template-columns: 200px 1fr 280px; }
 }
 @media (max-width: 900px) {
-  #page-kiosk.active { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
+  #page-kiosk.active {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+    overscroll-behavior: none;
+  }
   .k-sidebar { display: none; }
   .k-cat-bar { display: flex; }
-  .k-pan { max-height: 280px; }
+
+  .k-main {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── Cart panel slides in from right ── */
+  .k-pan {
+    position: fixed;
+    top: 0; right: 0;
+    width: 88vw;
+    max-width: 360px;
+    height: 100dvh;
+    background: var(--surface2);
+    border-left: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 64px;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 300;
+  }
+
+  .k-pan.drawer-open {
+    transform: translateX(0);
+  }
+
+  /* Remove old drag handle */
+  .k-pan::before { display: none; }
+
+  .pan-hd { flex-shrink: 0; cursor: default; }
+  .pan-items {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pan-ft { flex-shrink: 0; }
+
+  /* ── Dim overlay ── */
+  .pan-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 299;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .pan-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* ── Floating cart toggle button ── */
+  .pan-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 400;
+    background: linear-gradient(135deg, var(--fire), var(--deep-red));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: .75rem 1.2rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(193,68,14,.5);
+    transition: all .25s;
+  }
+  .pan-toggle-btn:active { transform: scale(0.95); }
+  .pan-toggle-btn .ptb-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .pan-toggle-btn .ptb-count {
+    background: white;
+    color: var(--fire);
+    font-size: .7rem;
+    font-weight: 800;
+    padding: .1rem .45rem;
+    border-radius: 20px;
+    min-width: 20px;
+    text-align: center;
+  }
 }
-@media (max-width: 600px) {
-  .k-grid { grid-template-columns: 1fr 1fr; }
+
+/* Hide toggle btn on desktop */
+@media (min-width: 901px) {
+  .pan-toggle-btn { display: none; }
+  .pan-overlay { display: none; }
 }
