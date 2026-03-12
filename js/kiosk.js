@@ -47,3 +47,39 @@ function selectKioskCat(cat, btn) {
   const stagger = sec ? sec.querySelector('.stagger') : null;
   if (stagger) { stagger.classList.remove('vis'); setTimeout(() => stagger.classList.add('vis'), 50); }
 }
+
+// ── Mobile cart drawer ──
+function openDrawer() {
+  document.getElementById('kPan').classList.add('drawer-open');
+  document.getElementById('panOverlay').classList.add('visible');
+}
+
+function closeDrawer() {
+  document.getElementById('kPan').classList.remove('drawer-open');
+  document.getElementById('panOverlay').classList.remove('visible');
+}
+
+function toggleDrawer() {
+  const pan = document.getElementById('kPan');
+  pan.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+}
+
+// Keep the toggle button count in sync
+function updateToggleBtn(count) {
+  const btn = document.getElementById('panToggleCount');
+  if (btn) btn.textContent = count;
+}
+
+// Auto-open drawer when item is added on mobile
+const _origAddToPan = addToPan;
+window.addToPan = function(item) {
+  _origAddToPan(item);
+  if (window.innerWidth <= 900) openDrawer();
+};
+
+// Prevent pull-to-refresh
+document.addEventListener('touchmove', function(e) {
+  if (document.getElementById('page-kiosk').classList.contains('active')) {
+    e.preventDefault();
+  }
+}, { passive: false });
