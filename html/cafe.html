@@ -11,9 +11,33 @@
       </div>
 
       <!-- Cafe menu banner -->
-      <div class="cafe-banner reveal">
-        <!-- put your Cafe Menu image here -->
+      <!-- Drink Preview Panel -->
+<div class="cafe-preview reveal" id="cafePreview">
+  <div class="cp-empty" id="cpEmpty">
+    <div class="cp-empty-ico">☕</div>
+    <div class="cp-empty-txt">Tap any drink to preview it here</div>
+  </div>
+  <div class="cp-content" id="cpContent" style="display:none">
+    <div class="cp-img-wrap">
+      <img class="cp-img" id="cpImg" src="" alt="">
+      <div class="cp-img-placeholder" id="cpPlaceholder">
+        <span id="cpPlaceholderEmoji">☕</span>
       </div>
+    </div>
+    <div class="cp-info">
+      <div class="cp-cat" id="cpCat"></div>
+      <div class="cp-name" id="cpName"></div>
+      <div class="cp-prices" id="cpPrices"></div>
+      <div class="cp-sizes">
+        <div class="cp-size-label">Select Size:</div>
+        <div class="cp-size-btns" id="cpSizeBtns"></div>
+      </div>
+      <button class="cp-add-btn" id="cpAddBtn" onclick="addDrinkToCart()">
+        + Add to Pan
+      </button>
+    </div>
+  </div>
+</div>
 
       <!-- CAFE TABS -->
       <div class="ctab-row reveal">
@@ -29,105 +53,105 @@
       <!-- Cafe Lattes -->
       <div id="cafe-lattes" class="cpanel active">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Cafe Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Caramel Macchiato</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Hazelnut Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Vanilla Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">White Cappuccino</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mocha Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Red Velvet Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Salted Caramel</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Dirty Matcha</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Coffee Jelly</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Strawberry Macchiato</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Cafe Latte','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Cafe Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Caramel Macchiato','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Caramel Macchiato</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Hazelnut Latte','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Hazelnut Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Vanilla Latte','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Vanilla Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('White Cappuccino','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">White Cappuccino</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mocha Latte','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mocha Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Red Velvet Latte','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Red Velvet Latte</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Salted Caramel','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Salted Caramel</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span><span class="d-pill">P89 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Dirty Matcha','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Dirty Matcha</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Coffee Jelly','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Coffee Jelly</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry Macchiato','Cafe Latte','lattes',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry Macchiato</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
         </div>
       </div>
 
       <!-- Americano -->
       <div id="cafe-americano" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Classic</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Caramel</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Hazelnut</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Vanilla</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
-          <div class="drink-card"><div class="drink-name">Salted Caramel</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Classic','Americano','americano',[{size:'Med',price:69},{size:'Soc',price:79},{size:'Hot',price:79}])"><div class="drink-name">Classic</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Caramel','Americano','americano',[{size:'Med',price:69},{size:'Soc',price:79},{size:'Hot',price:79}])"><div class="drink-name">Caramel</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Hazelnut','Americano','americano',[{size:'Med',price:69},{size:'Soc',price:79},{size:'Hot',price:79}])"><div class="drink-name">Hazelnut</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Vanilla','Americano','americano',[{size:'Med',price:69},{size:'Soc',price:79},{size:'Hot',price:79}])"><div class="drink-name">Vanilla</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Salted Caramel','Americano','americano',[{size:'Med',price:69},{size:'Soc',price:79},{size:'Hot',price:79}])"><div class="drink-name">Salted Caramel</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span><span class="d-pill">P79 Hot</span></div></div>
         </div>
       </div>
 
       <!-- Milk Tea -->
       <div id="cafe-milktea" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Classic Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Chocolate Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Cookies &amp; Cream</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Hokkaido</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mango Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Okinawa</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Taro</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Wintermelon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Matcha Milk Tea</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Red Velvet Milk Tea</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Strawberry Milk Tea</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Classic Milk Tea','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Classic Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Chocolate Milk Tea','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Chocolate Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Cookies &amp; Cream','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Cookies &amp; Cream</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Hokkaido','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Hokkaido</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mango Milk Tea','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mango Milk Tea</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Okinawa','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Okinawa</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Taro','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Taro</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Wintermelon','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Wintermelon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Matcha Milk Tea','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Matcha Milk Tea</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Red Velvet Milk Tea','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Red Velvet Milk Tea</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry','Milk Tea','milktea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry Milk Tea</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
         </div>
       </div>
 
       <!-- Milk Series -->
       <div id="cafe-milkseries" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Strawberry Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Blueberry Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Chocolate Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mango Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Honey Peach Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Matcha Latte</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry Milk','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Blueberry Milk','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Blueberry Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Chocolate Milk','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Chocolate Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mango Milk','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mango Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Honey Peach Milk','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Honey Peach Milk</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Matcha Latte','Milk Series','milkseries',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Matcha Latte</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
         </div>
       </div>
 
       <!-- Frappe -->
       <div id="cafe-frappe" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Chocolate</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mocha</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Taro</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Cookies &amp; Cream</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Matcha</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Java Chip</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Red Velvet</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Salted Caramel Coffee Jelly</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Chocolate','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Chocolate</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mocha','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mocha</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Taro','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Taro</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Cookies &amp; Cream','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Cookies &amp; Cream</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Matcha','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Matcha</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Java Chip','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Java Chip</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Red Velvet','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Red Velvet</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Blueberry','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Salted Caramel Coffee Jelly','Cafe Frappe','frappe',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Salted Caramel Coffee Jelly</div><div class="drink-prices"><span class="d-pill">P89 Med</span><span class="d-pill">P99 Soc</span></div></div>
         </div>
       </div>
 
       <!-- Fruit Tea -->
       <div id="cafe-fruittea" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Green Apple</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Honey Peach</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Kiwi</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Lemon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Lychee</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mango</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Passion Fruit</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Watermelon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Blueberry','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Green Apple','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Green Apple</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Honey Peach','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Honey Peach</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Kiwi','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Kiwi</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Lemon','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Lemon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Lychee','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Lychee</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mango','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mango</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Passion Fruit','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Passion Fruit</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Watermelon','Cafe Fruit Tea','fruittea',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Watermelon</div><div class="drink-prices"><span class="d-pill">P69 Med</span><span class="d-pill">P79 Soc</span></div></div>
         </div>
       </div>
 
       <!-- Fruit Soda -->
       <div id="cafe-fruitsoda" class="cpanel">
         <div class="drink-grid stagger">
-          <div class="drink-card"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Green Apple</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Honey Peach</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Kiwi</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Lemon</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Lychee</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Mango</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Passion Fruit</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
-          <div class="drink-card"><div class="drink-name">Watermelon</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Blueberry','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Blueberry</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Strawberry','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Strawberry</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Green Apple','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Green Apple</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Honey Peach','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Honey Peach</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Kiwi','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Kiwi</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Lemon','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Lemon</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Lychee','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Lychee</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Mango','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Mango</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Passion Fruit','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Passion Fruit</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
+          <div class="drink-card" onclick="previewDrink('Watermelon','Cafe Fruit Soda','fruitsoda',[{size:'Med',price:79},{size:'Soc',price:89},{size:'Hot',price:89}])"><div class="drink-name">Watermelon</div><div class="drink-prices"><span class="d-pill">P79 Med</span><span class="d-pill">P89 Soc</span></div></div>
         </div>
       </div>
 
