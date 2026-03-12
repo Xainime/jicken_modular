@@ -78,3 +78,131 @@
   .drink-grid { grid-template-columns: repeat(2, 1fr); }
   .cafe-addon-grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* ─── DRINK PREVIEW PANEL ─── */
+.cafe-preview {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: rgba(45, 80, 22, .12);
+  border: 1px solid rgba(74, 138, 42, .2);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .35s ease;
+}
+
+.cp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: 2.5rem;
+  color: rgba(200, 240, 200, .35);
+}
+.cp-empty-ico { font-size: 2.5rem; opacity: .5; }
+.cp-empty-txt { font-size: .82rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+.cp-content {
+  display: flex;
+  gap: 2rem;
+  padding: 1.8rem;
+  width: 100%;
+  align-items: center;
+  animation: fadeUp .3s ease;
+}
+
+.cp-img-wrap {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(45, 80, 22, .2);
+  position: relative;
+}
+.cp-img { width: 100%; height: 100%; object-fit: cover; }
+.cp-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: rgba(45, 80, 22, .25);
+}
+
+.cp-info { flex: 1; }
+.cp-cat {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5a8a2a;
+  margin-bottom: .3rem;
+}
+.cp-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #e8f5e9;
+  margin-bottom: .8rem;
+  line-height: 1;
+}
+
+.cp-size-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(200,240,200,.4);
+  margin-bottom: .5rem;
+}
+.cp-size-btns { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cp-size-btn {
+  padding: .4rem .9rem;
+  border: 1.5px solid rgba(74,138,42,.3);
+  background: transparent;
+  color: rgba(200,240,200,.6);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: .75rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.cp-size-btn.selected {
+  background: #2d5016;
+  border-color: #5a8a2a;
+  color: white;
+}
+
+.cp-add-btn {
+  padding: .7rem 1.6rem;
+  background: linear-gradient(135deg, #2d5016, #5a8a2a);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .25s;
+  box-shadow: 0 4px 16px rgba(45,80,22,.4);
+}
+.cp-add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,80,22,.5); }
+
+/* Highlight selected drink card */
+.drink-card.selected {
+  background: #2d5016;
+  border-color: #5a8a2a;
+}
+.drink-card.selected .drink-name { color: white; }
+.drink-card.selected .d-pill { background: rgba(255,255,255,.1); color: white; border-color: rgba(255,255,255,.2); }
+
+@media (max-width: 600px) {
+  .cp-content { flex-direction: column; gap: 1rem; padding: 1.2rem; }
+  .cp-img-wrap { width: 100%; height: 140px; }
+  .cp-name { font-size: 1.5rem; }
+}
