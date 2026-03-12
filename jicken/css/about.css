@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════════
+   about.css — About page styles
+═══════════════════════════════════════════ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-img-wrap { border-radius: 24px; overflow: hidden; background: var(--surface2); min-height: 320px; border: 1px solid var(--border); }
+.about-img { width: 100%; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, .5); }
+.about-text p { font-size: .92rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+.about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.8rem; }
+.about-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem; text-align: center; }
+.about-card-ico { font-size: 1.6rem; margin-bottom: .3rem; }
+.about-card-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; color: var(--gold); }
+.about-card-lbl { font-size: .68rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+
+.about-mission-section { background: linear-gradient(135deg, #0a0004, var(--surface)); padding: 4rem 2.5rem; }
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.about-pillar { background: var(--surface2); border: 1px solid var(--border); border-radius: 18px; padding: 1.6rem; text-align: center; }
+.about-pillar-ico { font-size: 2rem; margin-bottom: .6rem; }
+.about-pillar-title { font-family: 'Syne', sans-serif; font-weight: 700; color: white; margin-bottom: .4rem; }
+.about-pillar-desc { font-size: .82rem; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,185 @@
+<div class="page" id="page-kiosk">
+
+  <!-- Mobile category bar -->
+  <div class="k-cat-bar" id="kCatBar">
+    <button class="active" onclick="selectKioskCat('buckets',this)">Buckets</button>
+    <button onclick="selectKioskCat('unlimited',this)">Unlimited</button>
+    <button onclick="selectKioskCat('alacarte',this)">Ala Carte</button>
+    <button onclick="selectKioskCat('tipidsets',this)">Tipid Sets</button>
+    <button onclick="selectKioskCat('bilao',this)">Bilao</button>
+    <button onclick="selectKioskCat('appetizers',this)">Appetizers</button>
+    <button onclick="selectKioskCat('cafe',this)">Cafe Drinks</button>
+    <button onclick="selectKioskCat('addons',this)">Add-Ons</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="k-sidebar">
+    <div class="k-sidebar-logo" onclick="navigate('home')">JICKEN.</div>
+    <button class="k-cat-btn active" data-cat="buckets" onclick="selectKioskCat('buckets',this)"><span class="k-cat-icon">🪣</span>Buckets</button>
+    <button class="k-cat-btn" data-cat="unlimited" onclick="selectKioskCat('unlimited',this)"><span class="k-cat-icon">♾️</span>Unlimited</button>
+    <button class="k-cat-btn" data-cat="alacarte" onclick="selectKioskCat('alacarte',this)"><span class="k-cat-icon">🍗</span>Ala Carte</button>
+    <button class="k-cat-btn" data-cat="tipidsets" onclick="selectKioskCat('tipidsets',this)"><span class="k-cat-icon">👨‍👩‍👧‍👦</span>Tipid Sets</button>
+    <button class="k-cat-btn" data-cat="bilao" onclick="selectKioskCat('bilao',this)"><span class="k-cat-icon">🔥</span>Bilao Wings</button>
+    <button class="k-cat-btn" data-cat="appetizers" onclick="selectKioskCat('appetizers',this)"><span class="k-cat-icon">🍟</span>Appetizers</button>
+    <button class="k-cat-btn" data-cat="cafe" onclick="selectKioskCat('cafe',this)"><span class="k-cat-icon">☕</span>Cafe Drinks</button>
+    <button class="k-cat-btn" data-cat="addons" onclick="selectKioskCat('addons',this)"><span class="k-cat-icon">➕</span>Add-Ons</button>
+  </div>
+
+  <!-- Main content area -->
+  <div class="k-main" id="kioskMain">
+
+    <!-- Buckets -->
+    <div id="k-buckets" class="k-section">
+      <div class="k-sec-title">Buckets</div>
+      <div class="k-grid stagger" id="k-grid-buckets">
+        <div class="k-item" id="k-bucket10" onclick="openModal(menuItems.bucket10)">
+          <!-- put your 10pc Bucket image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">10 PCS Wings + 2 Sauces</div>
+            <div class="k-item-desc">Choose 2 flavors</div>
+            <div class="k-item-ft"><div class="k-price">P300</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket10)">+</button></div>
+          </div>
+        </div>
+        <div class="k-item" id="k-bucket15" onclick="openModal(menuItems.bucket15)">
+          <!-- put your 15pc Bucket image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">15 PCS Wings + 3 Sauces</div>
+            <div class="k-item-desc">3 flavors</div>
+            <div class="k-item-ft"><div class="k-price">P425</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket15)">+</button></div>
+          </div>
+        </div>
+        <div class="k-item" id="k-bucket20" onclick="openModal(menuItems.bucket20)">
+          <!-- put your 20pc Bucket image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">20 PCS Wings + 4 Sauces</div>
+            <div class="k-item-desc">4 flavors</div>
+            <div class="k-item-ft"><div class="k-price">P550</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket20)">+</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unlimited -->
+    <div id="k-unlimited" class="k-section" style="display:none">
+      <div class="k-sec-title">Unlimited</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="openModal(menuItems.unli1)">
+          <!-- put your Unli image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">Unli Rice &amp; Chicken</div>
+            <div class="k-item-desc">1 hour, per person</div>
+            <div class="k-item-ft"><div class="k-price">P389</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.unli1)">+</button></div>
+          </div>
+        </div>
+        <div class="k-item" onclick="openModal(menuItems.unli2)">
+          <!-- put your Unli+Lemonade image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">Unli + Lemonade</div>
+            <div class="k-item-desc">Rice, Chicken &amp; Lemonade</div>
+            <div class="k-item-ft"><div class="k-price">P399</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.unli2)">+</button></div>
+          </div>
+        </div>
+        <div class="k-item" onclick="openModal(menuItems.unli3)">
+          <!-- put your Full Unli image here -->
+          <div class="k-item-info">
+            <div class="k-item-name">Full Unli Combo</div>
+            <div class="k-item-desc">Rice, Chicken, Lemonade, Fries, Nachos</div>
+            <div class="k-item-ft"><div class="k-price">P499</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.unli3)">+</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ala Carte -->
+    <div id="k-alacarte" class="k-section" style="display:none">
+      <div class="k-sec-title">Ala Carte</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="openModal(menuItems.ac1)"><!-- put your 3pc+Rice image here --><div class="k-item-info"><div class="k-item-name">3 PCS + Rice</div><div class="k-item-desc">1 Sauce</div><div class="k-item-ft"><div class="k-price">P99</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.ac1)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.ac2)"><!-- put your 6pc+Rice image here --><div class="k-item-info"><div class="k-item-name">6 PCS + Rice</div><div class="k-item-desc">2 Sauces</div><div class="k-item-ft"><div class="k-price">P189</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.ac2)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.ac3)"><!-- put your 3pc+Rice+Fries image here --><div class="k-item-info"><div class="k-item-name">3 PCS + Rice + Fries</div><div class="k-item-desc">1 Sauce</div><div class="k-item-ft"><div class="k-price">P169</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.ac3)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.ac4)"><!-- put your 3pc+LargeFries image here --><div class="k-item-info"><div class="k-item-name">3 PCS + Large Fries</div><div class="k-item-desc">1 Sauce</div><div class="k-item-ft"><div class="k-price">P189</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.ac4)">+</button></div></div></div>
+      </div>
+    </div>
+
+    <!-- Tipid Sets -->
+    <div id="k-tipidsets" class="k-section" style="display:none">
+      <div class="k-sec-title">Tipid Sets</div>
+      <div class="k-grid stagger">
+        <div class="k-item" id="k-duo" onclick="openModal(menuItems.duo)"><!-- put your Duo Set image here --><div class="k-item-info"><div class="k-item-name">Duo Tipid Set</div><div class="k-item-desc">Good for 2</div><div class="k-item-ft"><div class="k-price">P469</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.duo)">+</button></div></div></div>
+        <div class="k-item" id="k-familia" onclick="openModal(menuItems.familia)"><!-- put your Familia Set image here --><div class="k-item-info"><div class="k-item-name">Familia Tipid Set</div><div class="k-item-desc">Good for 4</div><div class="k-item-ft"><div class="k-price">P659</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.familia)">+</button></div></div></div>
+        <div class="k-item" id="k-tropa" onclick="openModal(menuItems.tropa)"><!-- put your Tropa Set image here --><div class="k-item-info"><div class="k-item-name">Tropa Tipid Set</div><div class="k-item-desc">Good for 6</div><div class="k-item-ft"><div class="k-price">P1,199</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.tropa)">+</button></div></div></div>
+        <div class="k-item" id="k-barkada" onclick="openModal(menuItems.barkada)"><!-- put your Barkada Set image here --><div class="k-item-info"><div class="k-item-name">Barkada Tipid Set</div><div class="k-item-desc">Good for 8</div><div class="k-item-ft"><div class="k-price">P1,699</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.barkada)">+</button></div></div></div>
+      </div>
+    </div>
+
+    <!-- Bilao -->
+    <div id="k-bilao" class="k-section" style="display:none">
+      <div class="k-sec-title">Bilao Wings</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="openModal(menuItems.bilao1)"><!-- put your Bilao 1 image here --><div class="k-item-info"><div class="k-item-name">Bilao 1</div><div class="k-item-desc">50 PCS, 10 Sauces</div><div class="k-item-ft"><div class="k-price">P1,499</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao1)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.bilao2)"><!-- put your Bilao 2 image here --><div class="k-item-info"><div class="k-item-name">Bilao 2</div><div class="k-item-desc">75 PCS, 15 Sauces</div><div class="k-item-ft"><div class="k-price">P2,249</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao2)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.bilao3)"><!-- put your Bilao 3 image here --><div class="k-item-info"><div class="k-item-name">Bilao 3</div><div class="k-item-desc">100 PCS, 20 Sauces</div><div class="k-item-ft"><div class="k-price">P2,999</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao3)">+</button></div></div></div>
+      </div>
+    </div>
+
+    <!-- Appetizers -->
+    <div id="k-appetizers" class="k-section" style="display:none">
+      <div class="k-sec-title">Appetizers &amp; Drinks</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="openModal(menuItems.nachos)"><!-- put your Nachos image here --><div class="k-item-info"><div class="k-item-name">Loaded Nachos</div><div class="k-item-desc">Piled high with toppings</div><div class="k-item-ft"><div class="k-price">P99</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.nachos)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.hashbrown)"><!-- put your Hashbrown image here --><div class="k-item-info"><div class="k-item-name">Hashbrown</div><div class="k-item-desc">Golden &amp; crispy</div><div class="k-item-ft"><div class="k-price">P39</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.hashbrown)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.fries)"><!-- put your Fries image here --><div class="k-item-info"><div class="k-item-name">Jiji Fries</div><div class="k-item-desc">Salt, Cheese, BBQ or Sour Cream</div><div class="k-item-ft"><div class="k-price">P99</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.fries)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.lemonade)"><!-- put your Lemonade image here --><div class="k-item-info"><div class="k-item-name">Glass of Lemonade</div><div class="k-item-desc">Refreshing &amp; ice-cold</div><div class="k-item-ft"><div class="k-price">P38</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.lemonade)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.pitcher)"><!-- put your Pitcher image here --><div class="k-item-info"><div class="k-item-name">1L Pitcher Lemonade</div><div class="k-item-desc">Share with the crew</div><div class="k-item-ft"><div class="k-price">P89</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.pitcher)">+</button></div></div></div>
+        <div class="k-item" onclick="openModal(menuItems.soda)"><!-- put your Soda image here --><div class="k-item-info"><div class="k-item-name">1.5L Soda w/ Ice</div><div class="k-item-desc">Coke, Sprite, or Royal</div><div class="k-item-ft"><div class="k-price">P99</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.soda)">+</button></div></div></div>
+      </div>
+    </div>
+
+    <!-- Cafe Drinks (kiosk) -->
+    <div id="k-cafe" class="k-section" style="display:none">
+      <div class="k-sec-title">Cafe Drinks</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="addToPan({id:'cafe_latte',name:'Cafe Latte (Med)',price:79,img:'/* put your cafe latte image here */',cat:'Cafe Latte',desc:'Iced cafe latte'})"><!-- put your Cafe Latte image here --><div class="k-item-info"><div class="k-item-name">Cafe Latte</div><div class="k-item-desc">Med P79 / Soc P89 / Hot P89</div><div class="k-item-ft"><div class="k-price">P79+</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan({id:'cafe_latte',name:'Cafe Latte (Med)',price:79,img:'/* put your cafe latte image here */',cat:'Cafe Latte',desc:'Rich espresso with steamed milk'})">+</button></div></div></div>
+        <div class="k-item"><!-- put your Milk Tea image here --><div class="k-item-info"><div class="k-item-name">Classic Milk Tea</div><div class="k-item-desc">Med P69 / Soc P79</div><div class="k-item-ft"><div class="k-price">P69+</div><button class="k-add-btn" onclick="addToPan({id:'milk_tea',name:'Classic Milk Tea (Med)',price:69,img:'/* put your milk tea image here */',cat:'Milk Tea',desc:'Classic creamy milk tea'})">+</button></div></div></div>
+        <div class="k-item"><!-- put your Frappe image here --><div class="k-item-info"><div class="k-item-name">Chocolate Frappe</div><div class="k-item-desc">Med P69 / Soc P79</div><div class="k-item-ft"><div class="k-price">P69+</div><button class="k-add-btn" onclick="addToPan({id:'choco_frappe',name:'Chocolate Frappe (Med)',price:69,img:'/* put your frappe image here */',cat:'Frappe',desc:'Blended chocolate frappe'})">+</button></div></div></div>
+        <div class="k-item"><!-- put your Fruit Tea image here --><div class="k-item-info"><div class="k-item-name">Fruit Tea</div><div class="k-item-desc">Many flavors - P69 Med</div><div class="k-item-ft"><div class="k-price">P69+</div><button class="k-add-btn" onclick="addToPan({id:'fruit_tea',name:'Fruit Tea (Med)',price:69,img:'/* put your fruit tea image here */',cat:'Fruit Tea',desc:'Refreshing fruit-infused tea'})">+</button></div></div></div>
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div id="k-addons" class="k-section" style="display:none">
+      <div class="k-sec-title">Add-Ons</div>
+      <div class="k-grid stagger">
+        <div class="k-item" onclick="addToPan(menuItems.extraRice)"><!-- put your Extra Rice image here --><div class="k-item-info"><div class="k-item-name">Extra Rice</div><div class="k-item-desc">Per serving</div><div class="k-item-ft"><div class="k-price">P25</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.extraRice)">+</button></div></div></div>
+        <div class="k-item" onclick="addToPan(menuItems.extraSauce)"><!-- put your Extra Sauce image here --><div class="k-item-info"><div class="k-item-name">Extra Sauce</div><div class="k-item-desc">Per sauce</div><div class="k-item-ft"><div class="k-price">P35</div><button class="k-add-btn" onclick="event.stopPropagation();addToPan(menuItems.extraSauce)">+</button></div></div></div>
+      </div>
+    </div>
+
+  </div><!-- end k-main -->
+
+  <!-- PAN / CART -->
+  <div class="k-pan">
+    <div class="pan-hd">
+      <div class="pan-title">My Pan <span class="pan-count" id="panCount">0</span></div>
+      <button class="pan-clear" onclick="clearPan()">Clear</button>
+    </div>
+    <div class="pan-items" id="panItems">
+      <div class="pan-empty">
+        <div class="pan-empty-ico">🍳</div>
+        <div class="pan-empty-txt">Your pan is empty.<br>Add items to get started!</div>
+      </div>
+    </div>
+    <div class="pan-ft">
+      <div class="pan-sub-row">
+        <span class="pan-sub-lbl">Subtotal</span>
+        <span class="pan-sub-val" id="panSubtotal">P0</span>
+      </div>
+      <div class="pan-total-row">
+        <span class="pan-total-lbl">Total</span>
+        <span class="pan-total-val" id="panTotal">P0</span>
+      </div>
+      <button class="pan-checkout" id="checkoutBtn" disabled onclick="checkout()">Place Order</button>
+    </div>
+  </div>
+
+</div>

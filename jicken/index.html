@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JiCken Wings & Cafe — Imus, Calabarzon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- ─── CSS MODULES ─── -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/cafe.css">
+  <link rel="stylesheet" href="css/rules.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/kiosk.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- ─── JS MODULES (data must load before app) ─── -->
+  <script src="js/data.js"></script>
+</head>
+<body>
+
+  <!-- ─── SHARED UI (nav, modal, snackbar, float pan) ─── -->
+  <!-- These appear on every page -->
+  <div id="shared-ui-placeholder"></div>
+
+  <!-- Inline shared UI directly since it spans all pages -->
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mnav-close" onclick="closeMobileNav()">✕</button>
+    <a onclick="navigate('home');closeMobileNav()">Home</a>
+    <a onclick="navigate('about');closeMobileNav()">About</a>
+    <a onclick="navigate('menu');closeMobileNav()">Menu</a>
+    <a onclick="navigate('cafe');closeMobileNav()">Cafe</a>
+    <a onclick="navigate('rules');closeMobileNav()">Rules</a>
+    <a onclick="navigate('contact');closeMobileNav()">Contact</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-brand" onclick="navigate('home')">JICKEN<span class="nav-brand-dot">.</span></div>
+    <ul class="nav-links">
+      <li><a onclick="navigate('about')" data-page="about">About</a></li>
+      <li><a onclick="navigate('menu')" data-page="menu">Menu</a></li>
+      <li><a onclick="navigate('cafe')" data-page="cafe">Cafe</a></li>
+      <li><a onclick="navigate('rules')" data-page="rules">House Rules</a></li>
+      <li><a onclick="navigate('contact')" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-order-btn" onclick="openKiosk(null)">Order Now</button>
+    <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="itemModal" onclick="closeModal(event)">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" onclick="closeModal()">x</button>
+      <!-- put your modal image here -->
+      <div class="modal-body">
+        <div class="modal-cat" id="modalCat"></div>
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-desc" id="modalDesc"></div>
+        <div class="modal-inc-title" id="modalIncTitle" style="display:none">INCLUDES</div>
+        <ul class="modal-inc" id="modalInc"></ul>
+        <div class="modal-ft">
+          <div class="modal-price" id="modalPrice"></div>
+          <div class="modal-actions">
+            <button class="btn-m-pan" onclick="addFromModal()">Add to Pan</button>
+            <button class="btn-m-order" onclick="orderFromModal()">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNACKBAR -->
+  <div class="snackbar" id="snackbar">Added to your Pan!</div>
+
+  <!-- FLOATING PAN BUTTON -->
+  <div class="float-pan" id="floatPan">
+    <button class="float-pan-btn" onclick="openKiosk(null)">
+      Pan <span class="fpan-count" id="floatPanCount">0</span>
+      <span id="floatPanTotal">0</span>
+    </button>
+  </div>
+
+  <!-- ─── PAGE SECTIONS ─── -->
+  <!-- Each page is in its own HTML file, included below -->
+
+  <!-- HOME PAGE -->
+  <div id="page-home-mount"></div>
+
+  <!-- ABOUT PAGE -->
+  <div id="page-about-mount"></div>
+
+  <!-- CONTACT PAGE -->
+  <div id="page-contact-mount"></div>
+
+  <!-- RULES PAGE -->
+  <div id="page-rules-mount"></div>
+
+  <!-- MENU PAGE -->
+  <div id="page-menu-mount"></div>
+
+  <!-- CAFE PAGE -->
+  <div id="page-cafe-mount"></div>
+
+  <!-- KIOSK PAGE -->
+  <div id="page-kiosk-mount"></div>
+
+  <!-- NOTE: Pages are loaded via JS below using fetch/innerHTML.
+       If you prefer static HTML, you can paste each html/page-*.html
+       content directly here instead of using the loader. -->
+
+  <!-- ─── JS MODULES ─── -->
+  <script src="js/nav.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/pan.js"></script>
+  <script src="js/menu-tabs.js"></script>
+  <script src="js/kiosk.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/loader.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* ═══════════════════════════════════════════
+   contact.css — Contact page styles
+═══════════════════════════════════════════ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.contact-row { display: flex; gap: .9rem; align-items: flex-start; }
+.contact-ico {
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  background: rgba(193, 68, 14, .12);
+  border: 1px solid var(--border-hot);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.contact-lbl { font-size: .67rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: .25rem; }
+.contact-val { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
+.hours-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: var(--surface2); min-height: 180px; }
+.hours-card img { width: 100%; display: block; }
+.contact-hours-img { margin-top: 1rem; border-radius: 16px; overflow: hidden; background: var(--surface2); min-height: 120px; }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}

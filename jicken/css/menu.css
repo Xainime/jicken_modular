@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════
+   menu.css — Menu page: Bilao, Tipid, Addons strip
+   (item cards are in base.css)
+═══════════════════════════════════════════ */
+
+/* ─── BILAO ─── */
+.bilao-banner {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+  background: var(--surface2);
+  min-height: 160px;
+}
+.bilao-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
+.bilao-card {
+  background: linear-gradient(135deg, #1a0a00, #2d1200);
+  border: 1px solid var(--border-hot);
+  border-radius: 20px;
+  padding: 1.8rem;
+  cursor: pointer;
+  transition: all .35s;
+}
+.bilao-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0, 0, 0, .5); border-color: var(--gold); }
+.bilao-num { font-family: 'Bebas Neue', sans-serif; font-size: .85rem; letter-spacing: 2px; color: var(--gold); margin-bottom: .3rem; }
+.bilao-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 2px; color: white; line-height: 1; margin-bottom: .8rem; }
+.bilao-pcs { font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: .3rem; }
+.bilao-sauces { font-size: .8rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+.bilao-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--fire); line-height: 1; }
+.bilao-price sup { font-size: 1.2rem; color: var(--gold); }
+
+/* ─── TIPID SETS ─── */
+.tipid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
+.tipid-card {
+  background: linear-gradient(135deg, #1a0a00, #2d1200);
+  border: 1px solid var(--border-hot);
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .35s;
+  position: relative;
+}
+.tipid-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0, 0, 0, .5); }
+.tipid-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.tipid-body { padding: 1.5rem; }
+.tipid-for {
+  display: inline-block;
+  background: rgba(201, 168, 76, .12);
+  color: var(--gold);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .25rem .7rem;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  margin-bottom: .6rem;
+}
+.tipid-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 2px; color: white; line-height: 1; margin-bottom: .9rem; }
+.tipid-inc { list-style: none; margin-bottom: 1.2rem; }
+.tipid-inc li {
+  font-size: .78rem;
+  color: var(--text-muted);
+  padding: .25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.tipid-inc li::before { content: "🍗"; font-size: .7rem; }
+.tipid-ft { display: flex; align-items: flex-end; justify-content: space-between; }
+.tipid-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--fire); line-height: 1; }
+.tipid-price span { font-size: 1.2rem; color: var(--gold); }
+.tipid-save {
+  background: linear-gradient(135deg, var(--fire), #8b0000);
+  color: white;
+  font-size: .68rem;
+  font-weight: 800;
+  padding: .35rem .7rem;
+  border-radius: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ─── APPETIZERS BANNER ─── */
+.appsnacks-banner {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+  background: var(--surface2);
+  min-height: 160px;
+}
+
+/* ─── ADD-ONS STRIP ─── */
+.addons-strip {
+  background: linear-gradient(135deg, var(--deep-red), #1a0003);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.addons-strip::before {
+  content: 'ADD-ONS';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 7rem;
+  color: rgba(255, 255, 255, .03);
+  letter-spacing: 8px;
+  pointer-events: none;
+}
+.addons-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 1.5rem; position: relative; }
+.addons-img { border-radius: 16px; overflow: hidden; max-width: 400px; margin: 0 auto 1.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, .4); background: var(--surface2); min-height: 120px; }
+.addons-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+.addon-pill {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: .7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  transition: all .25s;
+  cursor: pointer;
+}
+.addon-pill:hover { background: rgba(201, 168, 76, .12); border-color: var(--gold); transform: scale(1.04); }
+.addon-name { font-weight: 700; font-size: .85rem; color: var(--cream); }
+.addon-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--gold); letter-spacing: 1px; }

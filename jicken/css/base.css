@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════
+   base.css — CSS variables, resets, utilities
+   Shared across ALL pages
+═══════════════════════════════════════════ */
+
+/* ─── COLOR & DESIGN TOKENS ─── */
+:root {
+  --burgundy: #1a0005;
+  --deep-red: #5c0011;
+  --crimson: #8b0000;
+  --fire: #c1440e;
+  --gold: #c9a84c;
+  --gold-light: #e8c96e;
+  --cream: #fdf6ec;
+  --surface: #120008;
+  --surface2: #1e000d;
+  --surface3: #2a0012;
+  --text: #fdf6ec;
+  --text-muted: rgba(253, 246, 236, 0.55);
+  --border: rgba(201, 168, 76, 0.18);
+  --border-hot: rgba(193, 68, 14, 0.35);
+  --green: #1a4a1f;
+  --green-light: #4a8a2a;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ─── PAGE VISIBILITY ─── */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ─── SHARED SECTION LAYOUT ─── */
+.sec { padding: 5rem 2.5rem; max-width: 1200px; margin: 0 auto; }
+.sec-full { padding: 5rem 2.5rem; position: relative; }
+.sec-hd { margin-bottom: 3rem; }
+.sec-tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201, 168, 76, .08);
+  border: 1px solid var(--border);
+  padding: .28rem .75rem;
+  border-radius: 20px;
+  margin-bottom: .7rem;
+}
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  color: white;
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.accent { color: var(--fire); }
+.sec-desc {
+  font-size: .88rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.7;
+}
+.s-div {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fire), var(--gold));
+  border-radius: 2px;
+  margin: .7rem 0 .9rem;
+}
+
+/* ─── SHARED BUTTONS ─── */
+.btn-fire {
+  background: linear-gradient(135deg, var(--fire), var(--deep-red));
+  color: white;
+  padding: .85rem 2rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(193, 68, 14, .4);
+  transition: all .3s;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+}
+.btn-fire:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(193, 68, 14, .6); }
+
+.btn-outline-gold {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  padding: .85rem 2rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  transition: all .3s;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+}
+.btn-outline-gold:hover { background: var(--gold); color: var(--surface); }
+
+/* ─── ITEM CARDS (shared across menu + kiosk) ─── */
+.items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
+.item-card {
+  background: var(--surface2);
+  border: 1px solid var(--border-hot);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .3s;
+  position: relative;
+}
+.item-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0, 0, 0, .5); border-color: var(--gold); }
+.item-card-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.item-card-body { padding: 1.2rem; }
+.item-card-cat {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .35rem;
+}
+.item-card-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: .4rem;
+  line-height: 1.2;
+}
+.item-card-desc { font-size: .78rem; color: var(--text-muted); line-height: 1.5; margin-bottom: .9rem; }
+.item-card-ft { display: flex; align-items: center; justify-content: space-between; }
+.item-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: var(--fire);
+  letter-spacing: 1px;
+}
+.icard-btn {
+  background: var(--fire);
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: .4rem .85rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.icard-btn:hover { background: var(--gold); color: var(--surface); }
+.item-badge {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  background: var(--gold);
+  color: var(--surface);
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: .18rem .55rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+.item-badge.hot { background: var(--fire); color: white; }
+
+/* ─── FOOTER (shared across all pages) ─── */
+footer {
+  background: #050005;
+  border-top: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; color: var(--gold); margin-bottom: .25rem; }
+.footer-logo span { color: var(--fire); }
+.footer-tag { font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: .78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; cursor: pointer; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: .7rem; color: rgba(255, 255, 255, .18); }
+
+/* ─── SNACKBAR ─── */
+.snackbar {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface2);
+  border: 1px solid var(--gold);
+  color: var(--cream);
+  padding: .7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: .82rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .4);
+  z-index: 9999;
+  opacity: 0;
+  transition: all .3s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  pointer-events: none;
+}
+.snackbar.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ─── FLOATING PAN BUTTON ─── */
+.float-pan { position: fixed; bottom: 2rem; right: 2rem; z-index: 800; display: none; }
+.float-pan.show { display: block; }
+.float-pan-btn {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  background: linear-gradient(135deg, var(--gold), #a07830);
+  color: var(--surface);
+  padding: .8rem 1.5rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(201, 168, 76, .4);
+  transition: all .3s;
+  animation: floatB 2s ease-in-out infinite;
+}
+.float-pan-btn:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 14px 36px rgba(201, 168, 76, .6); }
+.fpan-count {
+  background: var(--fire);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .68rem;
+  font-weight: 900;
+}
+
+/* ─── TABS (shared: menu + cafe tabs share same pattern) ─── */
+.tabs-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.tab {
+  padding: .5rem 1.3rem;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.tab.active, .tab:hover {
+  background: var(--fire);
+  border-color: var(--fire);
+  color: white;
+  box-shadow: 0 4px 16px rgba(193, 68, 14, .35);
+  transform: translateY(-1px);
+}
+.panel { display: none; }
+.panel.active { display: block; animation: fadeUp .4s ease; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .sec { padding: 3.5rem 1.2rem; }
+}
+@media (max-width: 600px) {
+  .items-grid { grid-template-columns: 1fr 1fr; }
+}

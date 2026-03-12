@@ -1,0 +1,387 @@
+<div class="page" id="page-menu">
+  <div style="padding-top:64px"></div>
+
+  <div class="sec">
+    <div class="sec-hd reveal">
+      <div class="sec-tag">Full Menu</div>
+      <h2 class="sec-title">ORDER <span class="accent">UP</span></h2>
+      <div class="s-div"></div>
+      <p class="sec-desc">Buckets, unlimited, ala carte, tipid sets, bilao — every appetite covered.</p>
+    </div>
+
+    <!-- MENU TABS -->
+    <div class="tabs-row reveal">
+      <button class="tab active" onclick="switchMenuTab('buckets',this)">Buckets</button>
+      <button class="tab" onclick="switchMenuTab('unlimited',this)">Unlimited</button>
+      <button class="tab" onclick="switchMenuTab('alacarte',this)">Ala Carte</button>
+      <button class="tab" onclick="switchMenuTab('tipid',this)">Tipid Sets</button>
+      <button class="tab" onclick="switchMenuTab('bilao',this)">Bilao Wings</button>
+      <button class="tab" onclick="switchMenuTab('appsnacks',this)">Appetizers &amp; Drinks</button>
+    </div>
+
+    <!-- BUCKETS -->
+    <div id="menu-buckets" class="panel active">
+      <div class="items-grid stagger">
+        <div class="item-card" onclick="openModal(menuItems.bucket10)">
+          <!-- put your 10pc Bucket image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Jicken Bucket</div>
+            <div class="item-card-name">10 PCS Wings + 2 Sauces</div>
+            <div class="item-card-desc">Perfect for a small group or solo feasting. Choose 2 flavors.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>300</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket10)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.bucket15)">
+          <div class="item-badge">Popular</div>
+          <!-- put your 15pc Bucket image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Jicken Bucket</div>
+            <div class="item-card-name">15 PCS Wings + 3 Sauces</div>
+            <div class="item-card-desc">More wings, more choices. 3 flavors for variety seekers.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>425</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket15)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.bucket20)">
+          <!-- put your 20pc Bucket image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Jicken Bucket</div>
+            <div class="item-card-name">20 PCS Wings + 4 Sauces</div>
+            <div class="item-card-desc">The big bucket. 4 full flavors for the ultimate wing night.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>550</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bucket20)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNLIMITED -->
+    <div id="menu-unlimited" class="panel">
+      <div class="items-grid stagger">
+        <div class="item-card" onclick="openModal(menuItems.unli1)">
+          <div class="item-badge">Best Value</div>
+          <!-- put your Unli Rice Chicken image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Unlimited 1 Hour</div>
+            <div class="item-card-name">Unli Rice &amp; Chicken</div>
+            <div class="item-card-desc">All-you-can-eat rice &amp; chicken wings for a full hour. Same promo per table.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>389</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.unli1)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.unli2)">
+          <!-- put your Unli + Lemonade image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Unlimited 1 Hour</div>
+            <div class="item-card-name">Unli Rice, Chicken &amp; Lemonade</div>
+            <div class="item-card-desc">Level up with unlimited lemonade to wash down those wings.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>399</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.unli2)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.unli3)">
+          <div class="item-badge hot">Fire Deal</div>
+          <!-- put your Full Unli Combo image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Unlimited 1 Hour</div>
+            <div class="item-card-name">Full Unli Combo</div>
+            <div class="item-card-desc">Unli Rice, Chicken, Lemonade, Fries &amp; Nachos. The complete spread.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>499</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.unli3)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALA CARTE -->
+    <div id="menu-alacarte" class="panel">
+      <div class="items-grid stagger">
+        <div class="item-card" onclick="openModal(menuItems.ac1)">
+          <!-- put your 3pc+Rice image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Ala Carte</div>
+            <div class="item-card-name">3 PCS Wings + Rice</div>
+            <div class="item-card-desc">1 Sauce. Simple, satisfying, delicious.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>99</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.ac1)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.ac2)">
+          <div class="item-badge">Popular</div>
+          <!-- put your 6pc+Rice image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Ala Carte</div>
+            <div class="item-card-name">6 PCS Wings + Rice</div>
+            <div class="item-card-desc">2 Sauces. Double the flavor, double the fun.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>189</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.ac2)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.ac3)">
+          <!-- put your 3pc+Rice+Fries image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Ala Carte</div>
+            <div class="item-card-name">3 PCS + Rice + Fries</div>
+            <div class="item-card-desc">1 Sauce. Includes crispy fries for that extra crunch.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>169</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.ac3)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.ac4)">
+          <!-- put your 3pc+Large Fries image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Ala Carte</div>
+            <div class="item-card-name">3 PCS + Large Fries</div>
+            <div class="item-card-desc">1 Sauce. Wings + a heaping portion of fries.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>189</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.ac4)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPID SETS -->
+    <div id="menu-tipid" class="panel">
+      <div class="tipid-grid stagger">
+        <div class="tipid-card" onclick="openModal(menuItems.duo)">
+          <!-- put your Duo Tipid Set image here -->
+          <div class="tipid-body">
+            <div class="tipid-for">Good for 2</div>
+            <div class="tipid-name">DUO TIPID SET</div>
+            <ul class="tipid-inc">
+              <li>6 PCS Chicken (1 Flavor)</li>
+              <li>Fries</li>
+              <li>Loaded Nachos</li>
+              <li>2 Rice</li>
+              <li>1 Pitcher Lemonade</li>
+            </ul>
+            <div class="tipid-ft">
+              <div class="tipid-price"><span>P</span>469</div>
+              <div class="tipid-save">SAVE P60</div>
+            </div>
+          </div>
+        </div>
+        <div class="tipid-card" onclick="openModal(menuItems.familia)">
+          <!-- put your Familia Tipid Set image here -->
+          <div class="tipid-body">
+            <div class="tipid-for">Good for 4</div>
+            <div class="tipid-name">FAMILIA TIPID SET</div>
+            <ul class="tipid-inc">
+              <li>12 PCS Chicken (2 Flavors)</li>
+              <li>Fries</li>
+              <li>Loaded Nachos</li>
+              <li>4 Rice</li>
+              <li>1 Pitcher Lemonade</li>
+            </ul>
+            <div class="tipid-ft">
+              <div class="tipid-price"><span>P</span>659</div>
+              <div class="tipid-save">SAVE P100</div>
+            </div>
+          </div>
+        </div>
+        <div class="tipid-card" onclick="openModal(menuItems.tropa)">
+          <!-- put your Tropa Tipid Set image here -->
+          <div class="tipid-body">
+            <div class="tipid-for">Good for 6</div>
+            <div class="tipid-name">TROPA TIPID SET</div>
+            <ul class="tipid-inc">
+              <li>18 PCS Chicken (3 Flavors)</li>
+              <li>2 Fries</li>
+              <li>2 Loaded Nachos</li>
+              <li>6 Rice</li>
+              <li>2 Pitchers Lemonade</li>
+            </ul>
+            <div class="tipid-ft">
+              <div class="tipid-price"><span>P</span>1,199</div>
+              <div class="tipid-save">SAVE P100</div>
+            </div>
+          </div>
+        </div>
+        <div class="tipid-card" onclick="openModal(menuItems.barkada)">
+          <!-- put your Barkada Tipid Set image here -->
+          <div class="tipid-body">
+            <div class="tipid-for">Good for 8</div>
+            <div class="tipid-name">BARKADA TIPID SET</div>
+            <ul class="tipid-inc">
+              <li>24 PCS Chicken (4 Flavors)</li>
+              <li>3 Fries</li>
+              <li>3 Loaded Nachos</li>
+              <li>8 Rice</li>
+              <li>3 Pitchers Lemonade</li>
+            </ul>
+            <div class="tipid-ft">
+              <div class="tipid-price"><span>P</span>1,699</div>
+              <div class="tipid-save">SAVE P112</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BILAO WINGS -->
+    <div id="menu-bilao" class="panel">
+      <div class="bilao-banner">
+        <!-- put your Bilao Wings image here -->
+      </div>
+      <div class="bilao-grid stagger">
+        <div class="bilao-card" onclick="openModal(menuItems.bilao1)">
+          <div class="bilao-num">BILAO 01</div>
+          <div class="bilao-name">BILAO 1</div>
+          <div class="bilao-pcs">50 PCS WINGS</div>
+          <div class="bilao-sauces">10 sauces of your choice</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="bilao-price"><sup>P</sup>1,499</div>
+            <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao1)">Add to Pan</button>
+          </div>
+        </div>
+        <div class="bilao-card" onclick="openModal(menuItems.bilao2)">
+          <div class="bilao-num">BILAO 02</div>
+          <div class="bilao-name">BILAO 2</div>
+          <div class="bilao-pcs">75 PCS WINGS</div>
+          <div class="bilao-sauces">15 sauces of your choice</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="bilao-price"><sup>P</sup>2,249</div>
+            <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao2)">Add to Pan</button>
+          </div>
+        </div>
+        <div class="bilao-card" onclick="openModal(menuItems.bilao3)">
+          <div class="bilao-num">BILAO 03</div>
+          <div class="bilao-name">BILAO 3</div>
+          <div class="bilao-pcs">100 PCS WINGS</div>
+          <div class="bilao-sauces">20 sauces of your choice</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div class="bilao-price"><sup>P</sup>2,999</div>
+            <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.bilao3)">Add to Pan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPETIZERS & DRINKS -->
+    <div id="menu-appsnacks" class="panel">
+      <div class="appsnacks-banner">
+        <!-- put your Appetizers image here -->
+      </div>
+      <div class="items-grid stagger">
+        <div class="item-card" onclick="openModal(menuItems.nachos)">
+          <!-- put your Loaded Nachos image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Appetizer</div>
+            <div class="item-card-name">Loaded Nachos</div>
+            <div class="item-card-desc">Piled high with toppings. The perfect starter.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>99</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.nachos)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.hashbrown)">
+          <!-- put your Hashbrown image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Appetizer</div>
+            <div class="item-card-name">Hashbrown</div>
+            <div class="item-card-desc">Golden &amp; crispy. Simple and addictive.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>39</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.hashbrown)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.fries)">
+          <!-- put your Jiji Fries image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Appetizer</div>
+            <div class="item-card-name">Jiji Fries</div>
+            <div class="item-card-desc">Salt, Cheese, BBQ or Sour Cream. Pick your flavor.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>99</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.fries)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.lemonade)">
+          <!-- put your Lemonade image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Drink</div>
+            <div class="item-card-name">Glass of Lemonade</div>
+            <div class="item-card-desc">Refreshing &amp; ice-cold. Perfect with wings.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>38</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.lemonade)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.pitcher)">
+          <!-- put your Pitcher Lemonade image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Drink</div>
+            <div class="item-card-name">1L Pitcher Lemonade</div>
+            <div class="item-card-desc">Share with the crew. Full liter of refreshing lemonade.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>89</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.pitcher)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+        <div class="item-card" onclick="openModal(menuItems.soda)">
+          <!-- put your Soda image here -->
+          <div class="item-card-body">
+            <div class="item-card-cat">Drink</div>
+            <div class="item-card-name">1.5L Soda w/ Ice</div>
+            <div class="item-card-desc">Coke, Sprite, or Royal. Your favorite fizz.</div>
+            <div class="item-card-ft">
+              <div class="item-price"><sup>P</sup>99</div>
+              <button class="icard-btn" onclick="event.stopPropagation();addToPan(menuItems.soda)">Add to Pan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS STRIP -->
+  <div class="addons-strip">
+    <div class="addons-title">ADD-ONS</div>
+    <div class="addons-img">
+      <!-- put your Add-ons image here -->
+    </div>
+    <div class="addons-row">
+      <div class="addon-pill"><span class="addon-name">Extra Rice</span><span class="addon-price">P25</span></div>
+      <div class="addon-pill"><span class="addon-name">Extra Sauce</span><span class="addon-price">P35</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">JICKEN<span>.</span></div>
+    <div class="footer-tag">Wings &amp; Cafe - Imus, Calabarzon, PH</div>
+    <div class="footer-links">
+      <a onclick="navigate('home')">Home</a>
+      <a onclick="navigate('cafe')">Cafe</a>
+      <a onclick="navigate('rules')">House Rules</a>
+      <a onclick="navigate('contact')">Contact</a>
+    </div>
+    <div class="footer-copy">2026 JiCken Wings &amp; Cafe. All rights reserved.</div>
+  </footer>
+</div>
