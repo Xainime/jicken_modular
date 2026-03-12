@@ -158,7 +158,18 @@
   </div><!-- end k-main -->
 
   <!-- PAN / CART -->
-  <div class="k-pan">
+  <!-- Drawer overlay (mobile only) -->
+<!-- Overlay -->
+<div class="pan-overlay" id="panOverlay" onclick="closeDrawer()"></div>
+
+<!-- Floating cart button (mobile only) -->
+<button class="pan-toggle-btn" id="panToggleBtn" onclick="toggleDrawer()">
+  <span class="ptb-icon">🍳</span>
+  My Pan
+  <span class="ptb-count" id="panToggleCount">0</span>
+</button>
+
+<div class="k-pan" id="kPan">
     <div class="pan-hd">
       <div class="pan-title">My Pan <span class="pan-count" id="panCount">0</span></div>
       <button class="pan-clear" onclick="clearPan()">Clear</button>
